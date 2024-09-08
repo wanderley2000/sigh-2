@@ -1,0 +1,114 @@
+<app-menu></app-menu>
+<div class="content" id="content">
+  <h1>Registro de empleados</h1>
+  <span *ngIf="enviado && crearEmpleado.invalid"
+    >TODOS LOS CAMPOS SON OBLIGATORIOS</span
+  >
+  <form
+    class="form-container"
+    [formGroup]="crearEmpleado"
+    (ngSubmit)="agregarEmpleado()"
+  >
+    <div class="form-row">
+      <div class="form-group">
+        <label>Cedula</label>
+        <input type="number" formControlName="cedula" required />
+      </div>
+      <div class="form-group">
+        <label>Fecha de nacimiento</label>
+        <input type="date" id="fecha" name="fecha" formControlName="fechaNacimiento">
+      </div>
+      <div class="form-group">
+        <label>Primer apellido</label>
+        <input type="text" formControlName="apellidoUno" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Segundo apellido</label>
+        <input type="text" formControlName="apellidoDos" required />
+      </div>
+      <div class="form-group">
+        <label>Nombres</label>
+        <input type="text" formControlName="nameUno" required />
+      </div>
+      <div class="form-group">
+        <label>Grupo sanguineo</label>
+        <select id="opciones" name="opciones" formControlName="grupoRH">
+          <option value="opcion2" required></option>
+          <option value="opcion1">A+</option>
+          <option value="opcion2">O+</option>
+          <option value="opcion3">B+</option>
+          <option value="opcion4">AB+</option>
+          <option value="opcion4">A-</option>
+          <option value="opcion4">O-</option>
+          <option value="opcion4">B-</option>
+          <option value="opcion4">AB-</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label>Sexo</label>
+        <select id="opciones" name="opciones" formControlName="sexo">
+          <option value="opcion2" required></option>
+          <option value="opcion1">MASCULINO</option>
+          <option value="opcion2">FEMENINO</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label>Ciudad de nacimiento</label>
+        <input type="text" formControlName="ciudadNacimiento" required />
+      </div>
+      <div class="form-group">
+        <label>Estado civil</label>
+        <select id="opciones" name="opciones" formControlName="estadoCivil">
+          <option value="opcion2" required></option>
+          <option value="opcion1">SOLTERO/A</option>
+          <option value="opcion2">CASADO/A</option>
+          <option value="opcion2">DIVORCIADO/A</option>
+          <option value="opcion2">VIUDO/A</option>
+          <option value="opcion2">UNION LIBRE</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label>Dirección de residencia</label>
+        <input type="text" formControlName="direccion" required />
+      </div>
+      <div class="form-group">
+        <label>Teléfono celular</label>
+        <input type="text" formControlName="celular" required />
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="text" formControlName="correo" required />
+      </div>
+      <div class="form-group">
+        <label>Libreta Militar</label>
+        <select id="opciones" name="opciones" formControlName="libreta">
+          <option value="opcion2" required></option>
+          <option value="opcion1">SI</option>
+          <option value="opcion2">NO</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label>Ciudad de residencia</label>
+        <input type="text" formControlName="ciudadReside" required />
+      </div>
+      <div class="form-group">
+        <label>E.P.S</label>
+        <input type="text" formControlName="eps" required />
+      </div>
+      <div class="form-group">
+        <label>Fondo de pensiones</label>
+        <input type="text" formControlName="fondoPension" required />
+      </div>
+    </div>
+    <div class="form-hijo">
+      <div class="form-group">
+        <button type="submit">Guardar</button>
+      </div>
+      <div class="form-group">
+        <button (click)="limpiarPantalla()">Limpiar pantalla</button>
+      </div>
+    </div>
+  </form>
+</div>

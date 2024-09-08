@@ -1,0 +1,45 @@
+<section id="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-header">
+            <h4 style="text-align: center">SIGH</h4>
+            <p style="font-size: smaller; text-align: center">
+              Sistema Integrado de Gestión Humana
+            </p>
+          </div>
+          <div class="card-body">
+            <form (submit)="login()">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input placeholder="Ingresa tu usuario"
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  [(ngModel)] = "email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input placeholder="Ingresa tu contraseña"
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  [(ngModel)] = "password"
+                  required
+                />
+              </div>
+              <input
+                type="submit"
+                value="Iniciar sesión"
+                class="btn btn-dark w-100"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
